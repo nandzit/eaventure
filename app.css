@@ -1,0 +1,10 @@
+#root {
+    height: auto;
+    width: 100%;
+    position: relative;
+    background-color: #272727;
+    clear:both;
+    display: table;
+    overflow: hidden;
+    visibility: visible;
+}

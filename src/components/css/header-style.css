@@ -1,0 +1,102 @@
+.container {
+    width: 100%;
+    background-color: black;
+    height: max-content;
+    position: relative;
+    display: flex;
+}
+
+img.landscape {
+    width: 100%;
+    height: auto;
+    position: relative;
+    animation-name: fade-image;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    
+}
+
+.infobox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+
+.infoDestinationBox {
+    width: fit-content;
+    height: 100%;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+h3.nextDestinationTitle {
+    margin-top: 5%;
+    font-size: 4vw;
+    font-style: normal;
+    color: white;
+    text-align: center;
+}
+
+h1.nextDestinationName {
+    margin-top: 5%;
+    font-size: 12vw;
+    font-style: normal;
+    color: white;
+    text-align: center;
+}
+
+.titleBig {
+    font-size: 4vw;
+    font-style: normal;
+    color: white;
+}
+
+h3.nextDestinationTime {
+    font-size: 2vw;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.warning {
+    width: 100%;
+    height: 40px;
+    background-color: #5CF9B7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.warningText {
+    font-size: 18px;
+    font-style: normal;
+    color: black;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+}   
+
+/* 
+.info.next.destination.title {
+
+}
+
+.info.next.destination.time {
+
+} */
+
+
+@keyframes fade-image {
+    0%   {opacity: 0%;}
+    25%  {opacity: 25%;}
+    50%  {opacity: 50%;}
+    75%  {opacity: 75%;}
+    100% {opacity: 100%;}
+  }
