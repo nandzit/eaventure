@@ -1,26 +1,29 @@
 .container {
     width: 100%;
-    background-color: black;
-    height: max-content;
+    background-color: #B20029;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
     position: relative;
     display: flex;
 }
 
 img.landscape {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     position: relative;
     animation-name: fade-image;
     animation-duration: 2s;
     animation-timing-function: linear;
-    
+
 }
 
 .infobox {
     width: 100%;
     height: 100%;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    background-color: #B20029;
     display: flex;
     justify-content: center;
 }
@@ -35,7 +38,7 @@ img.landscape {
 }
 
 h3.nextDestinationTitle {
-    margin-top: 5%;
+    margin-top: 1vw;
     font-size: 4vw;
     font-style: normal;
     color: white;
@@ -43,7 +46,8 @@ h3.nextDestinationTitle {
 }
 
 h1.nextDestinationName {
-    margin-top: 5%;
+    margin-top: 1vw;
+    padding-top: 0;
     font-size: 12vw;
     font-style: normal;
     color: white;
@@ -100,3 +104,5 @@ h3.nextDestinationTime {
     75%  {opacity: 75%;}
     100% {opacity: 100%;}
   }
+
+

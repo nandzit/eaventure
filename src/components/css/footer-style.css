@@ -2,4 +2,16 @@
     background-color: #F9DC5C;
     width: 100%;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+h3.rights {
+    font-size: 14px;
+    color: #B20029;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
