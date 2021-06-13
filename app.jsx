@@ -32,25 +32,23 @@ let headerData = {
 }
 
 let bodyData = {
-
     media: [{
-      mediaImage: "../assets/pompei.jpg",
-      mediaTitle: "Is A nice place",
-      mediaDescription: "and here some descriptions will come"
+         mediaImage: "https://images.musement.com/cover/0002/15/venuehero-pompei-jpg_header-114431.jpeg?q=50&fit=crop&auto=format&w=1024&h=400",
+         mediaTitle: "Information Title",
+         mediaDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit quam in lectus mollis sodales. Vestibulum odio augue, blandit vitae augue in, posuere interdum odio. Duis nec faucibus ex, non consequat odio. Vestibulum consectetur malesuada quam id luctus. Aliquam malesuada vel lorem pulvinar aliquam. Suspendisse metus orci, varius eget arcu ac, efficitur laoreet odio. Ut ornare vulputate metus, congue lobortis diam accumsan sed. Mauris hendrerit facilisis purus non sollicitudin. "
         },{
-          mediaImage: "../assets/pompei.jpg",
-          mediaTitle: "Is A nice place",
-          mediaDescription: "and here some descriptions will come"
+          mediaImage: "../src/assets/pompei.jpg",
+          mediaTitle: "Information Title",
+          mediaDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit quam in lectus mollis sodales. Vestibulum odio augue, blandit vitae augue in, posuere interdum odio. Duis nec faucibus ex, non consequat odio. Vestibulum consectetur malesuada quam id luctus. Aliquam malesuada vel lorem pulvinar aliquam. Suspendisse metus orci, varius eget arcu ac, efficitur laoreet odio. Ut ornare vulputate metus, congue lobortis diam accumsan sed. Mauris hendrerit facilisis purus non sollicitudin. "
         }, {
-          mediaImage: "../assets/pompei.jpg",
-          mediaTitle: "Is A nice place",
-          mediaDescription: "and here some descriptions will come"
+          mediaImage: "../src/assets/pompei.jpg",
+          mediaTitle: "Information Title",
+          mediaDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit quam in lectus mollis sodales. Vestibulum odio augue, blandit vitae augue in, posuere interdum odio. Duis nec faucibus ex, non consequat odio. Vestibulum consectetur malesuada quam id luctus. Aliquam malesuada vel lorem pulvinar aliquam. Suspendisse metus orci, varius eget arcu ac, efficitur laoreet odio. Ut ornare vulputate metus, congue lobortis diam accumsan sed. Mauris hendrerit facilisis purus non sollicitudin. "
         }, ]
 }
 
 
 class App extends React.Component {
-  
   render() {
     return ( 
     <React.Fragment>
@@ -63,8 +61,6 @@ class App extends React.Component {
     )
   }
 }
-
-
 
 // Render App
 ReactDOM.render(

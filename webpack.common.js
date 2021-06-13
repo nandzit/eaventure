@@ -36,6 +36,21 @@ module.exports = {
                 }
               }
             ]
+          }, 
+          
+          {
+            test: /\.html$/,
+            exclude: /node_modules/,
+            loader: 'html-loader'
+          }, 
+          {
+            test: /\.(svg|png|jpg|gif)$/,
+            use: {
+              loader: "file-loader",
+              options: {
+                name: "images/[name].[hash].[ext]"
+              }
+            }
           }
         ]
       },

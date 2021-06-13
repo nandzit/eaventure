@@ -58,6 +58,7 @@ h1.nextDestinationName {
     font-size: 4vw;
     font-style: normal;
     color: white;
+    border: 20px;
 }
 
 h3.nextDestinationTime {

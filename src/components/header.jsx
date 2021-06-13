@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import styles from './css/header-style.css'
 
 
-
-
-
 class InformationTile extends Component {
     constructor(props) {
         super(props)
@@ -28,18 +25,10 @@ class InformationTile extends Component {
     }
 }
 
-
-
 class PublicityTile extends Component {
 
 
 }
-
-
-
-
-
-
 
 export default class Header extends Component {
 
@@ -52,7 +41,6 @@ export default class Header extends Component {
 
     render() {
         return (
-   
                 // {/* 
                 //     -Image
                 //     -Title (Prossima Fermata)
@@ -68,7 +56,6 @@ export default class Header extends Component {
             ))
         }           
         </ol>
-
         <div className="carousel-inner">     
           {
             this.state.data.stops.map((item, i) => (
@@ -89,7 +76,6 @@ export default class Header extends Component {
         </a>
         </div>
         // </div>
-
         );
     }
 }
