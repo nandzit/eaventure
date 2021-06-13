@@ -2,9 +2,10 @@
   "name": "eaventure",
   "version": "1.0.0",
   "description": "",
-  "main": "app.jsx",
+  "main": "./dist/main.js",
   "scripts": {
-    "start": "webpack serve"
+    "start": "webpack serve --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +32,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   }
 }

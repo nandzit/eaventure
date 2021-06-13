@@ -4,13 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const port = process.env.PORT || 3000;
 
 module.exports = {
-    mode: 'development',
     entry: './app.jsx',
-    output: {
-      filename: 'bundle.[hash].js'
-    },
-    devtool: 'inline-source-map',
-
     module: {
         rules: [
     
@@ -51,11 +45,4 @@ module.exports = {
           template: './index.html',
         })
       ],
-
-      devServer: {
-        host: 'localhost',
-        port: port,
-        historyApiFallback: true,
-        open: true
-      }
 };
