@@ -1,6 +1,7 @@
 .container {
     background-color: #B20029;
     height: max-content;
+    position: relative;
 }
 
 .mediaContainer {
@@ -22,6 +23,7 @@
 .contentMediaHeader {
     align-content: center;
     justify-content: center;
+    height: max-content;
     width: 100%;
     color: #F9DC5C;
 }
@@ -79,7 +81,7 @@
     .boxMedia {
         /* background-color: ; */
         width: 30%;
-        height: 350px;
+        height: max-content;
     }
 
     .mediaContainer {

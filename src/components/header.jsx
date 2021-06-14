@@ -49,7 +49,7 @@ export default class Header extends Component {
                 // */} 
 
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-        <ol className="carousel-indicators">
+        <ol className="carousel-indicators"  background-color="blue">
         {
             this.state.data.stops.map( (item, i) => (
                 item.isNext == true ?  <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active" key={i}></li> : <li data-target="#carouselExampleIndicators" data-slide-to={i} key={i}></li>
