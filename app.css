@@ -9,6 +9,24 @@
     visibility: visible;
 }
 
+.carousel-inner {
+    background-color: red;
+    color: red;
+}
+
+.carousel-inner {
+    background-color: red;
+    color: red;
+}
+
+.carousel-item-next {
+    background-color: red;
+    color: red;
+}
+.carousel-item.active {
+    background-color: red;
+    color: red;
+}
 
 html {
     overflow: hidden;

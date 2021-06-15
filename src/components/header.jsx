@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styles from './css/header-style.css'
 
-
 class InformationTile extends Component {
     constructor(props) {
         super(props)
@@ -26,8 +25,6 @@ class InformationTile extends Component {
 }
 
 class PublicityTile extends Component {
-
-
 }
 
 export default class Header extends Component {

@@ -1,5 +1,7 @@
 .container {
-    width: 100%;
+    width: auto;
+    margin-left: 20%;
+    margin-right: 20%;
     background-color: #B20029;
     height: auto;
     padding-top: 50px;
@@ -8,16 +10,7 @@
     display: flex;
 }
 
-img.landscape {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    animation-name: fade-image;
-    animation-duration: 2s;
-    animation-timing-function: linear;
 
-}
 
 .infobox {
     width: 100%;
