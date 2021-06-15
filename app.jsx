@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import NavBar from './src/components/navBar.jsx'
 import Header from './src/components/header.jsx'
 import Body from './src/components/body.jsx'
+import Loader from './src/components/loader.jsx'
 import Footer from './src/components/footer.jsx'
 import { BrowserRouter as Router, Switch, Route, Link, BrowserRouter } from "react-router-dom";
 import { useParams } from "react-router";
-import Popper from 'popper.js';
-import jQuery from 'jquery';
 import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap"
 import './_custom.scss';
@@ -61,7 +60,7 @@ let bodyData = {
 
 
 function Load() {
-  return <h1>Loading</h1>
+  return <Loader />
 }
 
 function ShowApp(data) {
