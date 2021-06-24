@@ -57,8 +57,14 @@ class App extends React.Component {
 
   CallAPI() {
     fetch('http://localhost:3000/stops')
-      .then(res => res.json())
-      .then((data) => { this.update(data) })
+      .then(res => { 
+        if (res.status == 503) { return }
+        const data = res.json() 
+        this.update(data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   update(data) {
