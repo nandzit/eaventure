@@ -1,13 +1,16 @@
 .container {
     background-color: #B20029;
-    height: max-content;
+    margin-bottom: 0;
+    bottom: 3vmin;
     position: relative;
 }
+
+/* #B20029 */
 
 .mediaContainer {
     width: 100%;
     height: max-content;
-    background-color: white;
+    background-color: black;
     display: flex;
     padding-top: 2%;
     padding-bottom: 5%;
@@ -67,12 +70,13 @@
 
     .mediaContainer {
         display: table;
-        background-color: #B20029;
+        /* background-color: #B20029; */
         justify-items: center;
         align-items: center;
         padding-top: 2%;
         padding-bottom: 5%;
         margin-top: 0;
+        margin-bottom: 0;
         justify-content: space-around;
     }
 
@@ -84,7 +88,7 @@
     .contentMediaHeaderDescription {
         text-align: justify;
         word-break: keep-all;
-        font-size: 4vmin;
+        font-size: 3vmin;
         word-wrap:  unset;
         color: white;
     }
@@ -101,7 +105,7 @@
     .mediaContainer {
         display: flex;
         padding-bottom: 10%;
-        height: max-content;
+        margin-bottom: 0;
     }
 
     .contentMediaTitle {

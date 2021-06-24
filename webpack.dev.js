@@ -4,7 +4,7 @@ const common = require("./webpack.common")
 const { merge } = require("webpack-merge")
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 2700;
 
 module.exports = merge(common, {
     mode: 'development',

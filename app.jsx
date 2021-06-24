@@ -11,53 +11,10 @@ import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap"
 import './_custom.scss';
 
-function getID () {
+function getID() {
   const { id } = useParams()
   console.log(id)
 }
-
-let headerData = {
-
-    stops:  [{
-      isNext: true,
-      stop: "Napoli",
-      time: "14:30"
-    }, 
-    {
-      isNext: false,
-      stop: "Napoli",
-      time: "14:30"
-    },
-    {
-      isNext: false,
-      stop: "Napoli",
-      time: "14:30"
-    },
-    {
-      isNext: false,
-      stop: "Napoli",
-      time: "14:30"
-    }]
-
-}
-
-let bodyData = {
-    media: [{
-         mediaImage: "https://images.musement.com/cover/0002/15/venuehero-pompei-jpg_header-114431.jpeg?q=50&fit=crop&auto=format&w=1024&h=400",
-         mediaTitle: "Information Title",
-         mediaDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit quam in lectus mollis sodales. Vestibulum odio augue, blandit vitae augue in, posuere interdum odio. Duis nec faucibus ex, non consequat odio. Vestibulum consectetur malesuada quam id luctus. Aliquam malesuada vel lorem pulvinar aliquam. Suspendisse metus orci, varius eget arcu ac, efficitur laoreet odio. Ut ornare vulputate metus, congue lobortis diam accumsan sed. Mauris hendrerit facilisis purus non sollicitudin. "
-        },{
-          mediaImage: "https://images.musement.com/cover/0002/15/venuehero-pompei-jpg_header-114431.jpeg?q=50&fit=crop&auto=format&w=1024&h=400",
-          mediaTitle: "Information Title",
-          mediaDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit quam in lectus mollis sodales. Vestibulum odio augue, blandit vitae augue in, posuere interdum odio. Duis nec faucibus ex, non consequat odio. Vestibulum consectetur malesuada quam id luctus. Aliquam malesuada vel lorem pulvinar aliquam. Suspendisse metus orci, varius eget arcu ac, efficitur laoreet odio. Ut ornare vulputate metus, congue lobortis diam accumsan sed. Mauris hendrerit facilisis purus non sollicitudin. "
-        }, {
-          mediaImage: "https://images.musement.com/cover/0002/15/venuehero-pompei-jpg_header-114431.jpeg?q=50&fit=crop&auto=format&w=1024&h=400",
-          mediaTitle: "Information Title",
-          mediaDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit quam in lectus mollis sodales. Vestibulum odio augue, blandit vitae augue in, posuere interdum odio. Duis nec faucibus ex, non consequat odio. Vestibulum consectetur malesuada quam id luctus. Aliquam malesuada vel lorem pulvinar aliquam. Suspendisse metus orci, varius eget arcu ac, efficitur laoreet odio. Ut ornare vulputate metus, congue lobortis diam accumsan sed. Mauris hendrerit facilisis purus non sollicitudin. "
-        }, ]
-}
-
-
 
 function Load() {
   return <Loader />
@@ -65,82 +22,82 @@ function Load() {
 
 function ShowApp(data) {
   const header = data.header
-  console.log(header)
-  return ( 
-          <React.Fragment>
-          <NavBar />
-          <Header data={header}/>
-          <Body   data={bodyData}/>
-          <Footer />
-          </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <NavBar />
+      <Header data={header} />
+      <Body />
+      <Footer />
+    </React.Fragment>
+  )
 }
 
 function RunApp(props) {
-      const isLoaded = props.isLoaded
-      const data = props.data
-      if (isLoaded) {
-        return <ShowApp header={data}/>
-      } else {
-        return <Load />
-      }
+  const isLoaded = props.isLoaded
+  const data = props.data
+  if (isLoaded) {
+    return <ShowApp header={data} />
+  } else {
+    return <Load />
+  }
 }
 
-
-
 class App extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {
-        isLoaded: false,
-        data: null
-      };
-    }
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoaded: false,
+      data: null
+    };
+  }
 
-    componentDidMount () {
-      this.CallAPI()
-    }
+  componentDidMount() {
+    this.CallAPI()
+  }
 
-    CallAPI () {
-      fetch('https://b817bb7b-6d2e-4c13-9ff5-28542b88a535.mock.pstmn.io/stops')
+  CallAPI() {
+    fetch('http://localhost:3000/stops')
       .then(res => res.json())
       .then((data) => { this.update(data) })
-      }
+  }
 
-    update (data) {
+  update(data) {
+    setInterval(() => {
       this.setState({
         isLoaded: true,
         data: data
       })
-    }
+    }, (2000));
+  }
 
+  render() {
 
-    render() {
+    return (
+      <Router>
+        <Switch>
 
-    return (   
-    <Router>
-    <Switch>
-    
-    {/* Case where the user is trying to get the root */}
-    <Route exact path="/">
-    <h1>We are sorry , this page is not avaliable</h1>
-    </Route>
-    
-    <Route exact path path="/:id">
-    
-    {/* // Case where the user already load content */}
-    {/* Check if there is data to show , if there isn't show the loader */}
+          {/* Case where the user is trying to get the root */}
+          <Route exact path="/">
+            <h1>We are sorry , this page is not avaliable</h1>
+          </Route>
 
-     <RunApp isLoaded={this.state.isLoaded} data={this.state.data}/>
-    </Route>
-    </Switch>
-    </Router>
+          <Route exact path path="/:id">
+
+            {/* // Case where the user already load content */}
+            {/* Check if there is data to show , if there isn't show the loader */}
+
+            <RunApp isLoaded={this.state.isLoaded} data={this.state.data} />
+          </Route>
+        </Switch>
+      </Router>
     )
   }
 }
 
 // Render App
 ReactDOM.render(
-  <App />,
+  <React.Fragment>
+    <App />
+  </React.Fragment>,
   document.getElementById('root')
 )

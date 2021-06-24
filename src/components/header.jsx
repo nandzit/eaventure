@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import styles from './css/header-style.css'
 
+
+function formatTime (time) {
+    return time.split(":").slice(0,-1).join(':')
+}
+
 class InformationTile extends Component {
     constructor(props) {
         super(props)
@@ -11,12 +16,11 @@ class InformationTile extends Component {
     render() {
         return (
             <div className={styles.container}>
-            {/* <img src="../assets/pompei.jpg" className={styles.landscape}></img> */}
             <div className={styles.infobox}>
                     <div className={styles.infoDestinationBox }>
-                    <h3  className={styles.nextDestinationTitle }>  Prossima Fermata</h3>
+                    <h3  className={styles.nextDestinationTitle }>  {this.state.data.isNext ? "Prossima Fermata" : ""}</h3>
                     <h1  className={styles.nextDestinationName}>    {this.state.data.stop} </h1>
-                    <h3  className={styles.nextDestinationTime}>    Alle <span className={styles.titleBig}>{this.state.data.time}</span></h3>
+                    <h3  className={styles.nextDestinationTime}>    Arriva alle <span className={styles.titleBig}>{formatTime(this.state.data.time)}</span></h3>
             </div>
             </div>
             </div>
