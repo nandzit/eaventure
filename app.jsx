@@ -10,6 +10,7 @@ import { useParams } from "react-router";
 import '!style-loader!css-loader!bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap"
 import './_custom.scss';
+import 'regenerator-runtime/runtime';
 
 function getID() {
   const { id } = useParams()
@@ -55,16 +56,15 @@ class App extends React.Component {
     this.CallAPI()
   }
 
-  CallAPI() {
-    fetch('http://localhost:3000/stops')
-      .then(res => { 
-        if (res.status == 503) { return }
-        const data = res.json() 
-        this.update(data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+  async CallAPI() {
+    const response = await fetch('http://localhost:3000/stops')
+
+    if (response.status == 503) {
+      return 
+    } else {
+      const json = await response.json()
+      this.update(json)
+    }
   }
 
   update(data) {
