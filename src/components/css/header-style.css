@@ -3,9 +3,8 @@
     margin-left: 20%;
     margin-right: 20%;
     background-color: #B20029;
-    height: auto;
-    padding-top: 50px;
-    padding-bottom: 100px;
+    height: max-content;
+    padding-bottom: 50px;
     position: relative;
     display: flex;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from "../assets/eaventurelogo.png"
+import logo from "../assets/logoEAV.png"
 import styles from './css/navBar-style.css'
 
 
@@ -9,7 +9,7 @@ export default class NavBar extends Component {
             <div className={styles.container}>
                 {/* <div className={styles.navBar}> */}
                 <div className={styles.icon}>
-                <img src={logo} width="100" heigh="100"></img>
+                <img src={logo} width="150" heigh="auto"></img>
                 </div>
                 {/* </div> */}
             </div>

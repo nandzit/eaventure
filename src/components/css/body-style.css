@@ -1,8 +1,8 @@
 .container {
     background-color: #B20029;
     margin-bottom: 0;
-    bottom: 3vmin;
     position: relative;
+    display: inline-block;
 }
 
 /* #B20029 */
@@ -34,6 +34,9 @@
 .contentMediaTitle {
     text-align: center;
     font-size: 32px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: cornsilk;
 }
 
 .contentMediaHeaderDescription {

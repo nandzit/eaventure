@@ -1,6 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 
-.carousel-inner{background-color:#B20029}
+.carousel-inner{
+    background-color:#B20029
+    height 0px
+    width 0px
+    margin-top 0px
+    
+}
 
 body {
     min-height: 100vh;
@@ -17,4 +23,26 @@ body {
     min-height: 100vh;
     height: fit-content;
     display: grid;
+}
+
+
+.carousel-indicators li {
+    height: 15px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.carousel-indicators {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 0px;
+    padding-top: 0px;
+    // user-select: none;
+    // pointer-events: none;
+    height: max-content;
+}
+
+#indi {
+    height: 0px;
+    width: 0px;
 }
