@@ -78,7 +78,7 @@ export default class Header extends Component {
 
 
     async updateHeader(arg) {
-        const response = await fetch(`https://eaventure.live/api/${this.id}`)
+        const response = await fetch(`https://eaventure.live/api/stops/${arg.state.id}`)
         if (response.status == 503) { 
              return 
         } else {
