@@ -1,3 +1,11 @@
+
+@keyframes appear {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+
+
+
 .container {
     width: auto;
     margin-left: 20%;
@@ -34,6 +42,8 @@ h3.nextDestinationTitle {
     font-style: normal;
     color: white;
     text-align: center;
+    animation-name: appear;
+    animation-duration: 2s;
 }
 
 h1.nextDestinationName {
@@ -43,6 +53,8 @@ h1.nextDestinationName {
     font-style: normal;
     color: white;
     text-align: center;
+    animation-name: appear;
+    animation-duration: 2s;
 }
 
 .titleBig {
@@ -58,6 +70,8 @@ h3.nextDestinationTime {
     color: white;
     text-align: center;
     margin-top: -10px;
+    animation-name: appear;
+    animation-duration: 2s;
 }
 
 .warning {

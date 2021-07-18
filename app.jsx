@@ -16,6 +16,7 @@ import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
 
+
 function getID() {
   const { id } = useParams()
   console.log(id)
@@ -28,10 +29,11 @@ function Load() {
 function ShowApp(data) {
   const header = data.header
   const media = data.media
+  const id = data.id
   return (
     <React.Fragment>
       <NavBar />
-      <Header data={header} />
+      <Header data={header} id={id}/>
       <Body   data={media}/>
       <Footer />
     </React.Fragment>
@@ -42,8 +44,9 @@ function RunApp(props) {
   const isLoaded = props.isLoaded
   const data = props.data
   const media = props.media
+  const id = props.id
   if (isLoaded) {
-    return <ShowApp header={data} media={media} />
+    return <ShowApp header={data} media={media} id={id} />
   } else {
     return <Load />
   }
@@ -55,7 +58,8 @@ class App extends React.Component {
     this.state = {
       isLoaded: false,
       data: null,
-      media: null
+      media: null,
+      id: this.props.match.params.id
     };
   }
 
@@ -65,14 +69,13 @@ class App extends React.Component {
   }
 
   async CallAPI() {
-    const response = await fetch('https://eaventure.live/api/stops')
-
+    const id = this.props.match.params.id
+    const response = await fetch(`https://eaventure.live/api/stops/${this.state.id}`)
     if (response.status == 503) {
       return 
     } else {
 
     const media = await fetch('https://eaventure.live/api/media')
-    console.log(media)
 
     if (media.status == 503 ) {
       return 
@@ -96,33 +99,22 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
-      <Router>
-        <Switch>
-
-          {/* Case where the user is trying to get the root */}
-          <Route exact path="/">
-            <h1>We are sorry , this page is not avaliable</h1>
-          </Route>
-
-          <Route exact path path="/:id">
-
-            {/* // Case where the user already load content */}
-            {/* Check if there is data to show , if there isn't show the loader */}
-
-            <RunApp isLoaded={this.state.isLoaded} data={this.state.data} media={this.state.media} />
-          </Route>
-        </Switch>
-      </Router>
+          <RunApp isLoaded={this.state.isLoaded} data={this.state.data} media={this.state.media} id={this.state.id} />
     )
   }
 }
 
 // Render App
 ReactDOM.render(
-  <React.Fragment>
-    <App />
-  </React.Fragment>,
-  document.getElementById('root')
+  <Router>
+    <Switch>
+    <Route exact path path="/:id" component={props => <App {...props} />}>
+    </Route>
+    <Route exact path path="/">
+    <h1>We are sorry , this page is not avaliable</h1>
+    </Route>
+    </Switch>
+    </Router>,
+    document.getElementById('root')
 )

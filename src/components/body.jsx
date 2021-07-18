@@ -13,12 +13,11 @@ function CreateMediaVideo(props) {
     }
 
     const url = media.Media
-    console.log(media.Name)
     const embbended = url.split('=')[1]
     return  (
     <React.Fragment>
     <h1 className={styles.contentMediaTitle}>Conosci {media.Name}</h1>
-    <iframe width="100%" height="400px" id="video-youtube" src={`https://www.youtube.com/embed/${embbended}?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="400px" id="video-youtube" src={`https://www.youtube.com/embed/${embbended}?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
     </React.Fragment>
     )   
 }
@@ -36,7 +35,6 @@ class Media extends Component {
         const data = event.data.media
         const objc = event.data.objc
         const destination = document.getElementsByClassName("carousel-item active")[0].id
-        console.log(destination)
         const active = data.find( (media) => { 
             return media.Name == destination 
         })  
@@ -48,7 +46,6 @@ class Media extends Component {
     componentDidMount() {
         if (this.active == null) {
             const destination = document.getElementsByClassName("carousel-item active")[0].id
-            console.log(destination)
             const active = this.state.data.find( (media) => { 
                 return media.Name == destination 
             })  
