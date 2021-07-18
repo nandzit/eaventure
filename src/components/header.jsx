@@ -16,7 +16,7 @@ function InformationTile(data)  {
             <div className={styles.infobox}>
                     <div className={styles.infoDestinationBox }>
                     <h3  className={styles.nextDestinationTitle }>  {header.isNext ? "Prossima Fermata" : ""}</h3>
-                    <h1  className={styles.nextDestinationName} id="stop_destination">   {header.stop} </h1>
+                    <h1  className={styles.nextDestinationName} id="stop_destination" data={header.stop}>   {header.stop} </h1>
                     <h3  className={styles.nextDestinationTime}>    Arriva alle <span className={styles.titleBig}>{formatTime(header.time)}</span></h3>
             </div>
             </div>
@@ -28,7 +28,6 @@ function InformationTile(data)  {
 
 function Slider (data) {
     const items = data.items
-    console.log(items)
     return (
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" data-interval="false" data-touch="false">
     <ol className="carousel-indicators"  background-color="blue">

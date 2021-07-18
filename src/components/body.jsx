@@ -45,7 +45,8 @@ class Media extends Component {
 
     componentDidMount() {
         if (this.active == null) {
-            const destination = document.getElementsByClassName("carousel-item active")[0].id
+            const destination = document.getElementById("stop_destination").getAttribute('data')
+            console.log(destination)
             const active = this.state.data.find( (media) => { 
                 return media.Name == destination 
             })  
@@ -53,7 +54,7 @@ class Media extends Component {
                 active: active
             })
         }
-        $('#carouselExampleIndicators').on('slid.bs.carousel',  {media: this.state.data, objc: this}, this.handleUpdate)
+        // $('#carouselExampleIndicators').on('slid.bs.carousel',  {media: this.state.data, objc: this}, this.handleUpdate)
     }
 
     render() {
