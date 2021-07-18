@@ -28,7 +28,6 @@ function InformationTile(data)  {
 
 function Slider (data) {
     const items = data.items
-    console.log(items)
     return (
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" data-interval="false" data-touch="false">
     <ol className="carousel-indicators"  background-color="blue">
@@ -79,7 +78,7 @@ export default class Header extends Component {
 
 
     async updateHeader(arg) {
-        const response = await fetch(`https://eaventure.live/api/${this.id}`)
+        const response = await fetch(`https://eaventure.live/api/stops/${arg.state.id}`)
         if (response.status == 503) { 
              return 
         } else {
