@@ -5,6 +5,8 @@ import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
+const event = new Event('reloadStations');
+
 function formatTime (time) {
     return time.split(":").slice(0,-1).join(':')
 }
@@ -87,10 +89,13 @@ export default class Header extends Component {
                 data: data_json,
             })
          }
+
+        dispatchEvent(event);
     }
 
     componentDidMount () {
         setInterval(this.updateHeader, 30000, this);
+
     }
 
     render() {

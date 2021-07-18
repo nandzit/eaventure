@@ -31,30 +31,33 @@ class Media extends Component {
         }
     }
 
-    handleUpdate(event) {  
-        const data = event.data.media
-        const objc = event.data.objc
-        const destination = document.getElementsByClassName("carousel-item active")[0].id
-        const active = data.find( (media) => { 
-            return media.Name == destination 
-        })  
-        objc.setState({
-            active: active
-        })
-    } 
+ 
 
     componentDidMount() {
         if (this.active == null) {
             const destination = document.getElementById("stop_destination").getAttribute('data')
-            console.log(destination)
             const active = this.state.data.find( (media) => { 
+                return media.Name == destination 
+            })  
+            console.log(destination)
+            this.setState({
+                active: active
+            })
+        }
+
+        function update () {
+            const data = this.state.data
+            console.log("Calling")
+            const destination = document.getElementById("stop_destination").getAttribute('data')
+            const active = data.find( (media) => { 
                 return media.Name == destination 
             })  
             this.setState({
                 active: active
             })
         }
-        // $('#carouselExampleIndicators').on('slid.bs.carousel',  {media: this.state.data, objc: this}, this.handleUpdate)
+
+        addEventListener('reloadStations', update.bind(this), false)
     }
 
     render() {
